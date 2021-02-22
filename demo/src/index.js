@@ -1,82 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Nubbin from './nubbin';
-import { Dragabilibuddy, DragBuddy, DropBuddy } from '../lib/dragabilibuddy';
-
-import './style.scss';
+import DragDropBasic from './demos/01_basic';
 
 const DragDropDemo = () => {
-  const data = [
-    {
-      name: 'numbers',
-      acceptedDragId: 'n',
-      nubbins: [
-        {
-          value: 1,
-          dragId: 'n',
-        },
-        {
-          value: 2,
-          dragId: 'n',
-        },
-      ],
-    },
-    {
-      name: 'letters & numbers',
-      acceptedDragId: ['l', 'n'],
-      nubbins: [
-        {
-          value: 3,
-          dragId: 'n',
-        },
-        {
-          value: 'A',
-          dragId: 'l',
-        },
-      ],
-    },
-    {
-      name: 'letters',
-      acceptedDragId: 'l',
-      nubbins: [
-        {
-          value: 'B',
-          dragId: 'l',
-        },
-        {
-          value: 'C',
-          dragId: 'l',
-        },
-      ],
-    },
-  ];
-
-  return (
-    <Dragabilibuddy>
-      <div className="ddd-container">
-        {data.map((item) => (
-          <DropBuddy
-            key={ item.name }
-            className="ddd-section"
-            activeClass="ddd-section--active"
-            hoverClass="ddd-section--hover"
-            acceptedDragId={ item.acceptedDragId }
-            dropArgs={ item.name }
-            onDrop={ (dragArgs, dropArgs) => { console.log(`'${dragArgs}' dropped onto '${dropArgs}'`); } }>
-            <span className="ddd-title">{item.name}</span>
-            {item.nubbins.map((nubbin) => (
-              <DragBuddy
-                key={ nubbin.value }
-                dragArgs={ nubbin.value }
-                dragId={ nubbin.dragId }>
-                <Nubbin>{nubbin.value}</Nubbin>
-              </DragBuddy>
-            ))}
-          </DropBuddy>
-        ))}
-      </div>
-    </Dragabilibuddy>
-  );
+  return (<DragDropBasic />);
 };
 
-export default DragDropDemo;
+ReactDOM.render(
+  <DragDropDemo />,
+  document.getElementById('root'),
+);
