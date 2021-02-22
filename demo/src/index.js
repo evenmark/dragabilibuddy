@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Nubbin from './nubbin';
-import { Dragabilibuddy, DragBuddy, DropBuddy } from './dragabilibuddy';
+import { Dragabilibuddy, DragBuddy, DropBuddy } from '../lib/dragabilibuddy';
 
 import './style.scss';
 
