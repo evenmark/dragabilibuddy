@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom';
 import DragDropBasic from './demos/01_basic';
 
 const DragDropDemo = () => {
-  return (<DragDropBasic />);
+  return (
+  <div>
+    <DragDropBasic />
+  </div>);
 };
 
 ReactDOM.render(
