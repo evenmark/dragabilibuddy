@@ -1,0 +1,80 @@
+@import '../../vars.scss';
+
+.ddd__basic {
+  .dbdy {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    min-height: 350px;
+    max-width: 1160px;
+    padding: 2rem 1rem;
+    
+    @media (min-width: $bp) {
+      flex-direction: row;
+    }
+
+    & > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.5rem 0;
+
+      @media (min-width: $bp) {
+        width: 50%;
+      }
+    }
+  }
+
+  .dbdy-drag {
+    cursor: grab;
+    transition: opacity 300ms ease;
+
+    &--dragging {
+      opacity: 0.4;
+    }
+  }
+
+  .dbdy-drop {
+    border: 4px solid gainsboro;
+    border-radius: 0.5rem;
+    color: darkgrey;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+    min-height: 200px;
+    padding: 1rem;
+    transition: all 300ms ease;
+
+    &--active {
+      border-color: $green;
+      color: $green;
+    }
+
+    &--hover {
+      animation-name: dropready;
+      animation-duration: 600ms;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+    }
+
+    & > span {
+      margin-bottom: 0.5rem;
+      width: 100%;
+    }
+
+    .nubbin {
+      transform: scale(1);
+    }
+  }
+
+  .dbdy__clone {
+    cursor: grabbing;
+  }
+}
+
+@keyframes dropready {
+  50% {
+    transform: scale(1.03);
+  }
+}
