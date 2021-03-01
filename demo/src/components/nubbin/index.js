@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './style.scss';
 
-const Nubbin = ({ children, clickable }) => {
-  const [isActive, setIsActive] = useState(false);
-
-  function handleClick() {
-    if (clickable) setIsActive(!isActive);
-  }
-
+const Nubbin = ({ children, selectable, isActive, handleClick }) => {
   return (
     <div
-      className={ `nubbin ${isActive ? 'nubbin--active' : ''}` }
+      className={ `nubbin ${selectable ? 'nubbin--selectable' : ''} ${isActive ? 'nubbin--active' : ''}` }
       tabIndex="0"
       role="button"
       onClick={ handleClick }
@@ -19,6 +14,23 @@ const Nubbin = ({ children, clickable }) => {
       {children}
     </div>
   );
+};
+
+Nubbin.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.shape({}),
+    PropTypes.arrayOf({}),
+  ]),
+  selectable: PropTypes.bool,
+  isActive: PropTypes.bool,
+  handleClick: PropTypes.func,
+};
+
+Nubbin.defaultProps = {
+  children: [],
+  selectable: false,
+  isActive: false,
+  handleClick: () => {},
 };
 
 export default Nubbin;

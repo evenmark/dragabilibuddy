@@ -9,13 +9,14 @@ const DragDropOrder = () => {
 
   function handleDrop(dragArgs, dropArgs) {
     const currentIndex = nubbins.findIndex((nubbin) => nubbin === dragArgs);
-    const newIndex = currentIndex > dropArgs ? dropArgs : dropArgs - 1;
-    const newState = nubbins.slice(0);
+    const newIndex = currentIndex < dropArgs ? dropArgs - 1 : dropArgs;
 
-    newState.splice(currentIndex, 1);
-    newState.splice(newIndex, 0, dragArgs);
-
-    setNubbins(newState);
+    if (currentIndex !== newIndex) {
+      const newState = nubbins.slice(0);
+      newState.splice(currentIndex, 1);
+      newState.splice(newIndex, 0, dragArgs);
+      setNubbins(newState);
+    }
   }
 
   return (

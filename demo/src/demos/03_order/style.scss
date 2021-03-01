@@ -1,5 +1,8 @@
 @import '../../vars.scss';
 
+$width: 10rem;
+$height: 6rem;
+
 .ddd__order {
   .dbdy {
     align-items: center;
@@ -17,17 +20,26 @@
     }
   }
 
+  .dbdy-drag,
+  .dbdy-drop {
+    height: $height;
+    width: $width;
+  }
+
   .dbdy-drag {
     cursor: grab;
-    transition: width 300ms ease-in-out;
+    transition: margin 300ms ease-in-out;
     overflow: hidden;
     position: relative;
     z-index: 2;
-    width: 10rem;
 
     &--dragging {
       opacity: 0;
-      width: 0;
+      margin: ($height / -2) 0;
+
+      @media (min-width: $bp) {
+        margin: 0 ($width / -2);
+      }
 
       & + .dbdy-drop {
         display: none;
@@ -36,19 +48,26 @@
   }
 
   .dbdy-drop {
-    height: 5rem;
-    margin: 0.5rem -5rem;
+    margin: ($height / -2) 0;
     position: relative;
-    transition: width 300ms ease-in-out;
-    width: 9.5rem;
     z-index: 1;
 
+    @media (min-width: $bp) {
+      margin: 0 ($width / -2);
+    }
+
     &--active {
+      transition: all 300ms ease-in-out;
       z-index: 3;
     }
 
     &--hover {
-      width: 18.5rem;
+      height: $height * 2;
+
+      @media (min-width: $bp) {
+        height: $height;
+        width: $width * 2;
+      }
     }
   }
 

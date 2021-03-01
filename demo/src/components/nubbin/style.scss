@@ -22,8 +22,13 @@
     transform: scale(1.1);
   }
 
-  &--active {
+  &--selectable {
     border-color: gainsboro;
     color: darkgrey;
+  }
+
+  &--active {
+    border-color: $pink;
+    color: $pink;
   }
 }

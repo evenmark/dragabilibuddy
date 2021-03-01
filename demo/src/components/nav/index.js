@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './style.scss';
 
@@ -17,5 +18,15 @@ const Nav = ({ activeIndex, handleClick }) => (
     ))}
   </ul>
 );
+
+Nav.propTypes = {
+  activeIndex: PropTypes.number,
+  handleClick: PropTypes.func,
+};
+
+Nav.defaultProps = {
+  activeIndex: [],
+  handleClick: () => {},
+};
 
 export default Nav;
