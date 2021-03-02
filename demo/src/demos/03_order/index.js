@@ -21,7 +21,7 @@ const DragDropOrder = () => {
 
   return (
     <div className="ddd__order">
-      <Dragabilibuddy>
+      <Dragabilibuddy dynamicDropSize={ true }>
         <DropBuddy
           dropArgs={ 0 }
           onDrop={ handleDrop } />

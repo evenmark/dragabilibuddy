@@ -67,10 +67,18 @@
       transform: scale(1);
     }
   }
+}
 
-  .dbdy__clone {
-    cursor: grabbing;
-  }
+.dbdy__drag-el {
+  background-color: $pink;
+  border-radius: 100px;
+  color: white;
+  cursor: grabbing;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  transform: translate(-80%, -80%);
+  width: 2rem;
 }
 
 @keyframes dropready {
