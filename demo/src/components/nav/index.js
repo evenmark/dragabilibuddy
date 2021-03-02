@@ -11,7 +11,10 @@ const Nav = ({ activeIndex, handleClick }) => (
       <li key={ name }>
         <button
           className={ `ddd-nav__item ${ activeIndex === i ? 'ddd-nav__item--active' : '' }` }
-          onClick={ () => handleClick(i) }>
+          onClick={ () => {
+            window.location.hash = i;
+            handleClick(i);
+          } }>
           {name}
         </button>
       </li>

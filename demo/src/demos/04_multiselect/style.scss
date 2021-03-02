@@ -64,18 +64,20 @@
     }
 
     .nubbin {
+      cursor: default;
       transform: scale(1);
     }
   }
 }
 
 .dbdy__drag-el {
-  background-color: $pink;
+  background: white;
+  border: 4px solid $pink;
   border-radius: 100px;
-  color: white;
+  color: $pink;
   cursor: grabbing;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.25rem;
+  height: 2rem;
   text-align: center;
   transform: translate(-80%, -80%);
   width: 2rem;

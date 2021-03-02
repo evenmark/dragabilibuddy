@@ -9,7 +9,7 @@ import DragDropMultiselect from './demos/04_multiselect';
 import './style.scss';
 
 const DragDropDemo = () => {
-  const [activeDemo, setActiveDemo] = useState(0);
+  const [activeDemo, setActiveDemo] = useState(parseInt(window.location.hash[1]));
 
   return (
     <div className="ddd">

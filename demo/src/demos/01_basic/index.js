@@ -28,7 +28,7 @@ const DragDropBasic = () => {
             onDrop={ handleDrop }>
             <span>Drop</span>
             {nubbinsIn.map((nubbin) => (
-              <Nubbin>Drag {nubbin + 1}</Nubbin>
+              <Nubbin selectable={ true }>Drag {nubbin + 1}</Nubbin>
             ))}
           </DropBuddy>
         </div>
