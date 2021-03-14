@@ -122,7 +122,7 @@ The components use default classes which you can target for styling on your own,
   - `dbdy__clone` - the class on the cloned element that follows the pointer during dragging. Overridden by passing the string prop `cloneClass`.
 - `DragBuddy`
   - `dbdy-drag` - the class on the surrounding `DragBuddy` wrapper. Overridden by passing the string prop `className`.
--- `dbdy-drag--dragging` - the class on the original dragged element during drag. Overridden by passing the string prop `draggingClass`.
+  - `dbdy-drag--dragging` - the class on the original dragged element during drag. Overridden by passing the string prop `draggingClass`.
 - `DropBuddy`
   - `dbdy-drop` - the class on the surrounding `DropBuddy` wrapper. Overridden by passing the string prop `className`.
   - `dbdy-drop--active` - the class on the `DropBuddy` during drag if the drop zone is viable. Overridden by passing the strong prop `activeClass`.
