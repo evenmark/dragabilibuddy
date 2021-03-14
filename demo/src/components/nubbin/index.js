@@ -17,10 +17,7 @@ const Nubbin = ({ children, selectable, isActive, handleClick }) => {
 };
 
 Nubbin.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.shape({}),
-    PropTypes.arrayOf({}),
-  ]),
+  children: PropTypes.any,
   selectable: PropTypes.bool,
   isActive: PropTypes.bool,
   handleClick: PropTypes.func,
