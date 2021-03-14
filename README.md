@@ -118,15 +118,15 @@ const MyComponent = () => (
 The components use default classes which you can target for styling on your own, or you can override any of the default classes to match your own naming conventions.
 
 - `Dragabilibuddy`
--- `dbdy` - the class on the surrounding `Dragabilibuddy` wrapper. Overridden by passing the string prop `className`.
--- `dbdy__clone` - the class on the cloned element that follows the pointer during dragging. Overridden by passing the string prop `cloneClass`.
+  - `dbdy` - the class on the surrounding `Dragabilibuddy` wrapper. Overridden by passing the string prop `className`.
+  - `dbdy__clone` - the class on the cloned element that follows the pointer during dragging. Overridden by passing the string prop `cloneClass`.
 - `DragBuddy`
--- `dbdy-drag` - the class on the surrounding `DragBuddy` wrapper. Overridden by passing the string prop `className`.
+  - `dbdy-drag` - the class on the surrounding `DragBuddy` wrapper. Overridden by passing the string prop `className`.
 -- `dbdy-drag--dragging` - the class on the original dragged element during drag. Overridden by passing the string prop `draggingClass`.
 - `DropBuddy`
--- `dbdy-drop` - the class on the surrounding `DropBuddy` wrapper. Overridden by passing the string prop `className`.
--- `dbdy-drop--active` - the class on the `DropBuddy` during drag if the drop zone is viable. Overridden by passing the strong prop `activeClass`.
--- `dbdy-drop--hover` - the class on the `DropBuddy` during drag if the drop zone is viable and is hovered over. Overridden by passing the strong prop `hoverClass`.
+  - `dbdy-drop` - the class on the surrounding `DropBuddy` wrapper. Overridden by passing the string prop `className`.
+  - `dbdy-drop--active` - the class on the `DropBuddy` during drag if the drop zone is viable. Overridden by passing the strong prop `activeClass`.
+  - `dbdy-drop--hover` - the class on the `DropBuddy` during drag if the drop zone is viable and is hovered over. Overridden by passing the strong prop `hoverClass`.
 
 ## Compatibility and Caveats
 
