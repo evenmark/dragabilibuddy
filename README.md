@@ -2,6 +2,12 @@
 
 Dragabilibuddy is a simple, lightweight drag and drop library with touch support for React. It has a some basic configurability and features, but with some creativity in your components and styling it can suit quite a few use cases.
 
+As the focus of this library was simplicity I recommend just forking it or copying the code to your own repository to add and remove features as you see fit, rather than consuming the library from NPM (which you could also do if you prefer).
+
+## Configurable features
+
+TBD
+
 ## How to use
 
 Implementation is quite simple and minimal styling is applied - you will need to handle the styles and updating of the DOM yourself. Look at the demos for jumping off points.
@@ -92,12 +98,51 @@ const MyComponent = () => (
 
 ## Styling
 
+Dragabilibuddy was designed to be very relaxed in its enforcement of styling. The only style are applied inline to the cloned drag element. Each of the wrapper components will augment the DOM - they wrap their children in an element container (default `div`) and use overrideable classes for styling.
+
 ### HTML tags
+
+`Dragabilibuddy`, `DragBuddy` and `DropBuddy` will all leave an element in the DOM (self-closing or wrapping their children). This is a `div` by default, but you can override these tags by providing the string prop `tagType` to any of the components.
+
+```javascript
+const MyComponent = () => (
+  <Dragabilibuddy>
+    <DragBuddy tagType="li">Drag me</DragBuddy>
+    <DropBuddy tagType="ul" />
+  </Dragabilibuddy>
+);
+```
 
 ### Classes
 
-## Configuration
+The components use default classes which you can target for styling on your own, or you can override any of the default classes to match your own naming conventions.
 
-## Compatibility
+- `Dragabilibuddy`
+-- `dbdy` - the class on the surrounding `Dragabilibuddy` wrapper. Overridden by passing the string prop `className`.
+-- `dbdy__clone` - the class on the cloned element that follows the pointer during dragging. Overridden by passing the string prop `cloneClass`.
+- `DragBuddy`
+-- `dbdy-drag` - the class on the surrounding `DragBuddy` wrapper. Overridden by passing the string prop `className`.
+-- `dbdy-drag--dragging` - the class on the original dragged element during drag. Overridden by passing the string prop `draggingClass`.
+- `DropBuddy`
+-- `dbdy-drop` - the class on the surrounding `DropBuddy` wrapper. Overridden by passing the string prop `className`.
+-- `dbdy-drop--active` - the class on the `DropBuddy` during drag if the drop zone is viable. Overridden by passing the strong prop `activeClass`.
+-- `dbdy-drop--hover` - the class on the `DropBuddy` during drag if the drop zone is viable and is hovered over. Overridden by passing the strong prop `hoverClass`.
+
+## Compatibility and Caveats
+
+I have not thoroughly tested this library. Assume compatibility with only the latest webkit and chromium based browsers. Testing has been completed with:
+
+- iOS and iPadOS 11.4
+- Chrome 86
+- Firefox 86
+
+Other caveats and limitations include:
+
+- Only once instance of `Dragabilibuddy` is possible
+- `DropBuddy` can contain instances of `DragBuddy`, do not go crazy with nesting
+- Dragging near the edge of the screen does no trigger auto-scrolling
+- ALl wrapper components leave a DOM element wrapper around their children
 
 ## Demos
+
+TBD
