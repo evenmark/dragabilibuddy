@@ -6,7 +6,31 @@ As the focus of this library was simplicity I recommend just forking it or copyi
 
 ## Configurable features
 
-TBD
+You can pass props to the `Dragabilibuddy` wrapper component to adjust a few simple things.
+
+- `dragStartDistance` - When starting drag, pointer must move this distance before drag is initiated. This prevent accidental drags on interactive drag items. Accepts and integer. Defaults to `10`. 
+- `cancelReturnDuration` - When drag is cancelled, the cloned element moves back to its point of origin. Accepts and integer (ms). Defaults to `300`.
+- `returnOnCancel` - When drag is cancelled, the cloned element moves back to its point of origin unless this prop is set to `false`. Defaults to `true`.
+- `dragElement` - When dragging, a clone of the dragged element follows the pointer, unless you pass a node/component to render, which will follow the pointer instead. Pass `[]` so nothing follows the pointer. Defaults to `null` (a clone will follow).
+- `dynamicDropSize` - When starting drag, the dimensions of the drop zones are measured once. If these drop zones change dimensions in styling (e.g. when hovering, active or are animated), set this to `true` to take continuous measurements. Defaults to `false`.
+
+```javascript
+import React from 'react';
+import { Dragabilibuddy, DragBuddy, DropBuddy } from 'dragabilibuddy';
+
+const MyComponent = () => (
+  <Dragabilibuddy
+    dragStartDistance={ 20 }
+    cancelReturnDuration={ 100 }
+    returnOnCancel={ false }
+    dragElement={ <p>Hi there!</p> }
+    dynamicDropSize={ true }>
+    {/* Children go here... */}
+  </Dragabilibuddy>
+);
+
+export default MyComponent;
+```
 
 ## How to use
 
@@ -15,9 +39,6 @@ Implementation is quite simple and minimal styling is applied - you will need to
 All you need to do is wrap the area you will be dragging and dropping in with the `Dragabilibuddy` component. Draggables and droppables are wrapped with the `DragBuddy` and `DropBuddy` components respectively and either can be self-closing, or contain children.
 
 ```javascript
-import React from 'react';
-import { Dragabilibuddy, DragBuddy, DropBuddy } from 'dragabilibuddy';
-
 const MyComponent = () => (
   <Dragabilibuddy>
     <h1>My drag and drop life</h1>
@@ -27,8 +48,6 @@ const MyComponent = () => (
     <DropBuddy />
   </Dragabilibuddy>
 );
-
-export default MyComponent;
 ```
 
 ### Passing information
@@ -128,6 +147,24 @@ The components use default classes which you can target for styling on your own,
   - `dbdy-drop--active` - the class on the `DropBuddy` during drag if the drop zone is viable. Overridden by passing the strong prop `activeClass`.
   - `dbdy-drop--hover` - the class on the `DropBuddy` during drag if the drop zone is viable and is hovered over. Overridden by passing the strong prop `hoverClass`.
 
+```javascript
+const MyComponent = () => (
+  <Dragabilibuddy
+    className="hello"
+    cloneClass="hello__clone">
+    <DragBuddy
+      className="hello__drag"
+      draggingClass="hello__drag--dragoon">
+      Drag me
+    </DragBuddy>
+    <DropBuddy
+      className="hello__drop"
+      activeClass="active"
+      hoverClass="glow" />
+  </Dragabilibuddy>
+);
+```
+
 ## Compatibility and Caveats
 
 I have not thoroughly tested this library. Assume compatibility with only the latest webkit and chromium based browsers. Testing has been completed with:
@@ -141,7 +178,7 @@ Other caveats and limitations include:
 - Only once instance of `Dragabilibuddy` is possible
 - `DropBuddy` can contain instances of `DragBuddy`, do not go crazy with nesting
 - Dragging near the edge of the screen does no trigger auto-scrolling
-- ALl wrapper components leave a DOM element wrapper around their children
+- All wrapper components leave a DOM element wrapper around their children
 
 ## Demos
 
