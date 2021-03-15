@@ -4,6 +4,13 @@ Dragabilibuddy is a simple, lightweight drag and drop library with touch support
 
 As the focus of this library was simplicity I recommend just forking it or copying the code to your own repository to add and remove features as you see fit, rather than consuming the library from NPM (which you could also do if you prefer).
 
+## Demos
+
+1. [Basic](//evenmark.github.io/dragabilibuddy/demo/#0) - A basic drag and drop. Rendering of elements is handled in local state outside the Dragabilibuddy.
+2. [Restricted](//evenmark.github.io/dragabilibuddy/demo/#1) - Drag elements are restricted to certain drop zones. Rendering of elements is handled in local state outside the Dragabilibuddy.
+3. [Order](//evenmark.github.io/dragabilibuddy/demo/#2) - Changing order of items in a list. Rendering of elements is handled in local state, a drop zone is positioned in between each drag item. Hover class is used to change the dimensions, margings and z-index in order to show items moving to accomodate the dragged item.
+4. [Multiselect](//evenmark.github.io/dragabilibuddy/demo/#3) - Click on each item to select them for drag. This is maintained in local state outside of Dragabilibuddy. Makes use of custom drag element.
+
 ## Configurable features
 
 You can pass props to the `Dragabilibuddy` wrapper component to adjust a few simple things.
@@ -179,7 +186,3 @@ Other caveats and limitations include:
 - `DropBuddy` can contain instances of `DragBuddy`, do not go crazy with nesting
 - Dragging near the edge of the screen does no trigger auto-scrolling
 - All wrapper components leave a DOM element wrapper around their children
-
-## Demos
-
-TBD
