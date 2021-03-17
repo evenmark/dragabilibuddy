@@ -13,6 +13,7 @@ const DragDropDemo = () => {
 
   return (
     <div className="ddd">
+      <h1>Dragabilibuddy</h1>
       <Nav activeIndex={ activeDemo } handleClick={ setActiveDemo } />
       {activeDemo === 0 && <DragDropBasic />}
       {activeDemo === 1 && <DragDropRestricted />}
