@@ -1,5 +1,7 @@
 # Dragabilibuddy
 
+[![npm version](https://badge.fury.io/js/dragabilibuddy.svg)](https://badge.fury.io/js/dragabilibuddy)
+
 Dragabilibuddy is a simple, lightweight drag and drop library with touch support for React. It has a some basic configurability and features, but with some creativity in your components and styling it can suit quite a few use cases.
 
 As the focus of this library was simplicity I recommend just forking it or copying the code to your own repository to add and remove features as you see fit, rather than consuming the library from NPM (which you could also do if you prefer).
