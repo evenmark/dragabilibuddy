@@ -1,8 +1,8 @@
 {
   "name": "dragabilibuddy",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Dragabilibuddy is a simple, lightweight drag and drop library with touch support for React. It has a some basic configurability and features, but with some creativity in your components and styling it can suit quite a few use cases.",
+  "main": "build/index.js",
   "directories": {
     "lib": "lib"
   },
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/evenmark/dragabilibuddy.git"
   },
-  "author": "",
+  "author": "evenmark",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/evenmark/dragabilibuddy/issues"
@@ -33,13 +33,16 @@
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.3.8",
     "node-sass": "^5.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "regenerator-runtime": "^0.13.7",
     "sass-loader": "^11.0.1",
     "webpack": "^5.23.0",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
   },
-  "dependencies": {
+  "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

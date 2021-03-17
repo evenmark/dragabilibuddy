@@ -6,6 +6,18 @@ Dragabilibuddy is a simple, lightweight drag and drop library with touch support
 
 As the focus of this library was simplicity I recommend just forking it or copying the code to your own repository to add and remove features as you see fit, rather than consuming the library from NPM (which you could also do if you prefer).
 
+- [Dragabilibuddy](#dragabilibuddy)
+  * [Demos](#demos)
+  * [Configurable features](#configurable-features)
+  * [How to use](#how-to-use)
+    + [Passing information](#passing-information)
+    + [Multiple arguments](#multiple-arguments)
+    + [Restricting draggables to certain droppables](#restricting-draggables-to-certain-droppables)
+  * [Styling](#styling)
+    + [HTML tags](#html-tags)
+    + [Classes](#classes)
+  * [Compatibility and Caveats](#compatibility-and-caveats)
+
 ## Demos
 
 1. [Basic](//evenmark.github.io/dragabilibuddy/demo/#0) - A basic drag and drop. Rendering of elements is handled in local state outside the Dragabilibuddy.
@@ -186,5 +198,5 @@ Other caveats and limitations include:
 
 - Only once instance of `Dragabilibuddy` is possible
 - `DropBuddy` can contain instances of `DragBuddy`, do not go crazy with nesting
-- Dragging near the edge of the screen does no trigger auto-scrolling
+- Dragging near the edge of the screen does not trigger auto-scrolling
 - All wrapper components leave a DOM element wrapper around their children
