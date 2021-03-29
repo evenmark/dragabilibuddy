@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -51,6 +52,7 @@ const rules = [
 module.exports = [
   {
     entry: './lib/index.js',
+    externals: [nodeExternals()],
     output: {
         path: path.join(__dirname, '/build'),
         filename: 'index.js',
