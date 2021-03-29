@@ -6,6 +6,10 @@
   "directories": {
     "lib": "lib"
   },
+  "files": [
+    "README.md",
+    "build/"
+  ],
   "scripts": {
     "start": "webpack serve --mode development --open --hot",
     "build": "webpack --mode production",

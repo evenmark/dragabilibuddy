@@ -54,6 +54,10 @@ module.exports = [
     output: {
         path: path.join(__dirname, '/build'),
         filename: 'index.js',
+        library: {
+          name: 'dragabilibuddy',
+          type: 'umd',
+        },
     },
     module: {
       rules,
