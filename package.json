@@ -1,6 +1,6 @@
 {
   "name": "dragabilibuddy",
-  "version": "0.1.0",
+  "version": "0.1.1-0",
   "description": "Dragabilibuddy is a simple, lightweight drag and drop library with touch support for React. It has a some basic configurability and features, but with some creativity in your components and styling it can suit quite a few use cases.",
   "main": "build/index.js",
   "directories": {
